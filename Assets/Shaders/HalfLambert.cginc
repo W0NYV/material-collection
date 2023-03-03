@@ -29,11 +29,13 @@ fixed4 frag(v2f i) : SV_Target
 {
     UNITY_LIGHT_ATTENUATION(attenuation, i, i.vertexW);
 
+    float3 normal = normalize(i.normal);
+    
     float3 light = normalize(_WorldSpaceLightPos0.w == 0 ?
                              _WorldSpaceLightPos0.xyz :
                              _WorldSpaceLightPos0.xyz - i.vertexW); 
 
-    float diffuse = saturate(dot(i.normal, light));
+    float diffuse = saturate(dot(normal, light));
 
     diffuse = diffuse * 0.5 + 0.5;
     diffuse = diffuse * diffuse;

@@ -30,20 +30,22 @@ fixed4 frag(v2f i) : SV_Target
 {
     UNITY_LIGHT_ATTENUATION(attenuation, i, i.vertexW);
 
+    float3 normal = normalize(i.normal);
+    
     float3 light = normalize(_WorldSpaceLightPos0.w == 0 ?
                              _WorldSpaceLightPos0.xyz :
                              _WorldSpaceLightPos0.xyz - i.vertexW);
 
     float3 view = normalize(_WorldSpaceCameraPos - i.vertexW);
-    float3 rflt = normalize(reflect(-light, i.normal));
+    float3 rflt = normalize(reflect(-light, normal));
 
-    float diffuse = saturate(dot(i.normal, light));
+    float diffuse = saturate(dot(normal, light));
 
     float specular = _Shiness != 0 ?
                      pow(saturate(dot(view, rflt)), _Shiness) :
                      0;
 
-    float3 ambient = ShadeSH9(half4(i.normal, 1));
+    float3 ambient = ShadeSH9(half4(normal, 1));
 
     fixed4 col = diffuse * _MainColor * _LightColor0
             + specular * _LightColor0;
