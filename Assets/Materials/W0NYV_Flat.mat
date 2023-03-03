@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: W0NYV_Gouraud_ADS
-  m_Shader: {fileID: 4800000, guid: 705a2c5464c970e40a4d4d025d0ed728, type: 3}
+  m_Name: W0NYV_Flat
+  m_Shader: {fileID: 4800000, guid: e325b1da2fdf457c956db36d7453bf08, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -21,8 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats:
-    - _Shiness: 7
+    m_Floats: []
     m_Colors:
     - _MainColor: {r: 0, g: 1, b: 0.75686276, a: 1}
   m_BuildTextureStacks: []
