@@ -19,11 +19,14 @@ public class GlowFilter : MonoBehaviour
 		
 		Graphics.Blit(src, brightnessTex, _material, 1);
 		
-		Graphics.Blit(brightnessTex, brightnessTex, _material, 2);
+		Graphics.Blit(brightnessTex, brightnessTex, _material, 3);
 		
+		//十字フィルター
+		//Graphics.Blit(brightnessTex, brightnessTex, _material, 4);
+
 		_material.SetTexture("_BrightnessTex", brightnessTex);
 		
-		Graphics.Blit(src, dest, _material, 3);
+		Graphics.Blit(src, dest, _material, 2);
 		
 		RenderTexture.ReleaseTemporary(brightnessTex);
 		

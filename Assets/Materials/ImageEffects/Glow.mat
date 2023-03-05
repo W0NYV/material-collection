@@ -26,8 +26,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FilterSize: 9
-    - _Intensity: 6.4
-    - _Threshold: 0.52
+    - _FilterSize: 12
+    - _Intensity: 10
+    - _Threshold: 0.36
     m_Colors: []
   m_BuildTextureStacks: []
